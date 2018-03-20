@@ -9,6 +9,13 @@ fun main(args: Array<String>) {
             17 to Car("red", "BMW", 2015),
             8 to Car("green", "Ford", 2010))
 
+    println(immutableMap.asSequence().filter { it.value.model == "Ford" }
+            .map { it.value.color })
+
+    listOf("Mary", "Jane", "Joe").asSequence()
+            .map { println("mapping $it"); it.toUpperCase() }
+            .filter { println("filtering $it"); it[0] == 'J' }
+            .find { it.endsWith('E') }
 
 }
 
